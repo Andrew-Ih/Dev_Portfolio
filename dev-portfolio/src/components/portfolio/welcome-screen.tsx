@@ -19,53 +19,59 @@ export function WelcomeScreen({ onEnter, isAnimating }: WelcomeScreenProps) {
       <AnimatedLines />
       
       {/* Content */}
-      <div className="relative z-10 text-center space-y-8 max-w-4xl mx-auto px-6">
-        <div className="space-y-4 animate-fade-in-up">
-          <h1 className="text-5xl md:text-7xl font-bold text-white drop-shadow-2xl">
-            Hi, I'm <span className="gradient-text-enhanced">Andrew Iheanacho</span>
+      <div className="relative z-10 text-center space-y-12 max-w-5xl mx-auto px-6">
+        <div className="space-y-8 animate-fade-in-up">
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-white drop-shadow-2xl leading-tight">
+            Hi, I'm{' '}
+            <span className="block mt-4 text-white font-black drop-shadow-2xl">
+              Andrew Iheanacho
+            </span>
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto leading-relaxed drop-shadow-lg font-medium">
-            Software Developer & AWS Cloud Practitioner
-          </p>
-          <p className="text-lg text-white/80 max-w-xl mx-auto drop-shadow-md">
-            Crafting digital experiences with modern technologies and cloud solutions
-          </p>
+          
+          <div className="space-y-6">
+            <p className="text-2xl md:text-3xl text-white/95 max-w-3xl mx-auto leading-relaxed drop-shadow-lg font-semibold">
+              Software Developer & AWS Cloud Practitioner
+            </p>
+            <p className="text-xl md:text-2xl text-white/85 max-w-2xl mx-auto drop-shadow-md font-light leading-relaxed">
+              Crafting digital experiences with modern technologies and cloud solutions
+            </p>
+          </div>
         </div>
         
-        <div className="animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+        <div className="animate-fade-in-up space-y-8" style={{ animationDelay: '0.3s' }}>
           <Button 
             onClick={onEnter}
             size="lg"
-            className="group relative overflow-hidden bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border border-white/30 px-8 py-4 text-lg font-semibold shadow-2xl hover:shadow-white/20 transition-all duration-300"
+            className="group relative overflow-hidden bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0 px-12 py-6 text-xl font-bold shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 rounded-full"
           >
             View My Work
-            <ArrowDown className="ml-2 h-5 w-5 group-hover:translate-y-1 transition-transform duration-300" />
+            <ArrowDown className="ml-3 h-6 w-6 group-hover:translate-y-1 transition-transform duration-300" />
           </Button>
         </div>
         
         {/* Social Links */}
-        <div className="animate-fade-in-up flex justify-center space-x-6" style={{ animationDelay: '0.4s' }}>
+        <div className="animate-fade-in-up flex justify-center space-x-8" style={{ animationDelay: '0.4s' }}>
           <a 
             href="https://github.com/Andrew-Ih" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-white/70 hover:text-white transition-colors duration-300"
+            className="group p-4 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white/80 hover:text-white transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-white/20"
           >
-            <Github className="h-8 w-8" />
+            <Github className="h-7 w-7" />
           </a>
           <a 
             href="https://www.linkedin.com/in/andrew-iheanacho-ab330b232/" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-white/70 hover:text-white transition-colors duration-300"
+            className="group p-4 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white/80 hover:text-white transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-white/20"
           >
-            <Linkedin className="h-8 w-8" />
+            <Linkedin className="h-7 w-7" />
           </a>
           <a 
             href="mailto:andrewiheanacho811@gmail.com" 
-            className="text-white/70 hover:text-white transition-colors duration-300"
+            className="group p-4 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white/80 hover:text-white transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-white/20"
           >
-            <Mail className="h-8 w-8" />
+            <Mail className="h-7 w-7" />
           </a>
         </div>
       </div>

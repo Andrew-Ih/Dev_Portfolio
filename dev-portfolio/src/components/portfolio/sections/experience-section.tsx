@@ -4,47 +4,51 @@ import { Calendar, MapPin, ExternalLink } from "lucide-react";
 
 const experiences = [
   {
-    title: "Senior Full Stack Developer",
-    company: "Tech Innovation Corp",
-    location: "Remote",
-    period: "2023 - Present",
+    title: "Software Engineering Intern",
+    company: "Value Partners Investments",
+    location: "Winnipeg, Canada",
+    period: "May 2025 - Present",
     type: "Full-time",
-    description: "Leading development of scalable web applications using React, Node.js, and AWS cloud services. Architected microservices infrastructure serving 100k+ users.",
-    technologies: ["React", "TypeScript", "Node.js", "AWS", "Docker", "PostgreSQL"],
+    // description: "Leading development of scalable web applications using React, Node.js, and AWS cloud services. Architected microservices infrastructure serving 100k+ users.",
+    technologies: ["C#", ".NET", "React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "MUI", "Azure DevOps", "Azure Function Apps", "Azure App Services", "XUnit", "Postman"],
     achievements: [
-      "Improved application performance by 40% through optimization",
-      "Led team of 5 developers on major product redesign",
-      "Implemented CI/CD pipeline reducing deployment time by 60%"
+      "Developing and maintaining scalable RESTful APIs in C#/.NET, applying Clean Architecture and SOLID principles to ensure maintainable, high-performance backend systems.",
+      "Designing, building, and optimizing CI/CD pipelines in Azure DevOps, leveraging deployment slots for seamless staging, validation, and production releases, reducing manual deployment time and increasing release reliability.",
+      "Refactoring frontend, backend and API endpoints for improved performance and reliability, writing unit tests with XUnit, and using Postman extensively for testing, and debugging across development environments. ",
+      "Deploying cloud services with Azure Function Apps and App Services, delivering event-driven, scalable architectures.",
+      "Creating responsive web applications using React, Next.js, TypeScript, JavaScript, Tailwind CSS, and MUI, ensuring UI consistency, accessibility, and user-centric design.",
+      "Participating in frequent code reviews to enforce best practices, reduce technical debt, and maintain long-term scalability.",
     ]
   },
   {
-    title: "Full Stack Developer",
-    company: "Digital Solutions Ltd",
-    location: "Lagos, Nigeria",
-    period: "2022 - 2023",
-    type: "Full-time",
-    description: "Developed and maintained multiple client projects using modern web technologies. Collaborated with design teams to create pixel-perfect user interfaces.",
-    technologies: ["React", "Python", "Django", "MongoDB", "AWS"],
+    title: "IT Support Analyst",
+    company: "IST - University of Manitoba",
+    location: "Winnipeg, Canada",
+    period: "September 2024 - April 2025",
+    type: "Part-time",
+    // description: "Developed and maintained multiple client projects using modern web technologies. Collaborated with design teams to create pixel-perfect user interfaces.",
+    technologies: ["Azure AD", "Entra", "Exchange Admin Center", "PowerShell", "Cherwell", "IT Service Management"],
     achievements: [
-      "Delivered 12+ successful client projects on time",
-      "Reduced bug reports by 35% through improved testing",
-      "Mentored 3 junior developers"
+      "Managed user accounts and permissions through Azure AD, Entra, and Exchange Admin Center.",
+      "Automated tasks using PowerShell to streamline account creation, management, troubleshooting and issue resolution.",
+      "Resolved 30+ daily tickets using Cherwell and IT service management tools, improving issue resolution time by 20%",
+      "Created detailed documentation and training materials to improve resource utilization and reduce recurring technical issues."
     ]
   },
   {
-    title: "Frontend Developer",
-    company: "StartupX",
-    location: "Remote",
-    period: "2021 - 2022",
-    type: "Contract",
-    description: "Built responsive web applications and mobile-first interfaces. Worked closely with UX designers to implement interactive user experiences.",
-    technologies: ["React", "JavaScript", "Tailwind CSS", "Firebase"],
+    title: "Software Developer Lead",
+    company: "UX Design Club - University of Manitoba",
+    location: "Winnipeg, Canada",
+    period: "January 2024 - August 2024",
+    type: "Volunteer",
+    // description: "Developed and maintained multiple client projects using modern web technologies. Collaborated with design teams to create pixel-perfect user interfaces.",
+    technologies: ["Javascript", "HTML", "CSS", "Figma"],
     achievements: [
-      "Increased user engagement by 25% through UI improvements",
-      "Implemented automated testing reducing QA time by 50%",
-      "Created reusable component library"
+      "Led the creation of responsive and user-friendly interfaces using JavaScript, HTML, CSS, and related front and back-end technologies, enhancing user experience and interface aesthetics.",
+      "Actively demonstrated strong communication and time management skills, facilitating effective collaboration and teamwork within a dynamic development environment.",
+      "Actively participated in Test-Driven Development (TDD) practices, writing, and executing tests to ensure the reliability and quality of code, fostering a culture of quality assurance within the development process.",
     ]
-  }
+  },
 ];
 
 export function ExperienceSection() {
@@ -98,9 +102,9 @@ export function ExperienceSection() {
                   </div>
                 </div>
 
-                <p className="text-foreground-muted mb-6 leading-relaxed">
+                {/* <p className="text-foreground-muted mb-6 leading-relaxed">
                   {experience.description}
-                </p>
+                </p> */}
 
                 {/* Key Achievements */}
                 <div className="mb-6">
@@ -150,6 +154,23 @@ export function ExperienceSection() {
           
           <div className="grid md:grid-cols-2 gap-6">
             <Card className="gradient-card shadow-card">
+            <CardContent className="p-6">
+                <div className="flex items-start justify-between mb-4">
+                <div>
+                    <h3 className="font-semibold text-lg">Bachelor of Computer Science - Honours (Co-op)</h3>
+                    <p className="text-foreground-muted">University of Manitoba</p>
+                </div>
+                <Badge variant="outline">
+                    Dec 2026
+                </Badge>
+                </div>
+                <p className="text-foreground-muted text-sm">
+                Expected graduation with focus on software engineering and system design.
+                </p>
+            </CardContent>
+            </Card>
+
+            <Card className="gradient-card shadow-card">
               <CardContent className="p-6">
                 <div className="flex items-start justify-between mb-4">
                   <div>
@@ -157,28 +178,11 @@ export function ExperienceSection() {
                     <p className="text-foreground-muted">Amazon Web Services</p>
                   </div>
                   <Badge variant="outline" className="border-success text-success">
-                    2023
+                    June 2025 - June 2028
                   </Badge>
                 </div>
                 <p className="text-foreground-muted text-sm">
                   Foundational understanding of AWS Cloud, services, and terminology.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="gradient-card shadow-card">
-              <CardContent className="p-6">
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="font-semibold text-lg">Computer Science Degree</h3>
-                    <p className="text-foreground-muted">University Name</p>
-                  </div>
-                  <Badge variant="outline">
-                    2020
-                  </Badge>
-                </div>
-                <p className="text-foreground-muted text-sm">
-                  Bachelor's degree with focus on software engineering and algorithms.
                 </p>
               </CardContent>
             </Card>

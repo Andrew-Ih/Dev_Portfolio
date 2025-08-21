@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { AnimatedLines } from "./animated-lines";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 
 interface WelcomeScreenProps {
   onEnter: () => void;
@@ -41,6 +41,32 @@ export function WelcomeScreen({ onEnter, isAnimating }: WelcomeScreenProps) {
             View My Work
             <ArrowDown className="ml-2 h-5 w-5 group-hover:translate-y-1 transition-transform duration-300" />
           </Button>
+        </div>
+        
+        {/* Social Links */}
+        <div className="animate-fade-in-up flex justify-center space-x-6" style={{ animationDelay: '0.4s' }}>
+          <a 
+            href="https://github.com/Andrew-Ih" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-white/70 hover:text-white transition-colors duration-300"
+          >
+            <Github className="h-8 w-8" />
+          </a>
+          <a 
+            href="https://www.linkedin.com/in/andrew-iheanacho-ab330b232/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-white/70 hover:text-white transition-colors duration-300"
+          >
+            <Linkedin className="h-8 w-8" />
+          </a>
+          <a 
+            href="mailto:andrewiheanacho811@gmail.com" 
+            className="text-white/70 hover:text-white transition-colors duration-300"
+          >
+            <Mail className="h-8 w-8" />
+          </a>
         </div>
       </div>
     </div>

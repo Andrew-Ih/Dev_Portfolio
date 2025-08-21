@@ -134,7 +134,7 @@ export function ExperienceSection() {
                       <Badge 
                         key={tech}
                         variant="secondary"
-                        className="bg-accent hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer"
+                        className="bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer"
                       >
                         {tech}
                       </Badge>

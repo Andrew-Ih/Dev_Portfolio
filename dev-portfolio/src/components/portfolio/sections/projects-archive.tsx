@@ -235,7 +235,7 @@ export function ProjectsArchive() {
                       <Badge 
                         key={tech}
                         variant="secondary"
-                        className="text-xs bg-accent hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer"
+                        className="text-xs bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer"
                       >
                         {tech}
                       </Badge>

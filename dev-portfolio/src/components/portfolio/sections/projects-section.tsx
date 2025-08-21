@@ -98,20 +98,15 @@ export function ProjectsSection() {
                   </div>
 
                   <div className="flex flex-wrap gap-2">
-                    {project.technologies.slice(0, 4).map((tech) => (
+                    {project.technologies.map((tech) => (
                       <Badge 
                         key={tech}
                         variant="secondary"
-                        className="text-xs bg-accent hover:bg-primary hover:text-primary-foreground transition-colors"
+                        className="text-xs bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-primary-foreground transition-colors"
                       >
                         {tech}
                       </Badge>
                     ))}
-                    {project.technologies.length > 4 && (
-                      <Badge variant="outline" className="text-xs">
-                        +{project.technologies.length - 4} more
-                      </Badge>
-                    )}
                   </div>
                 </div>
               </CardContent>

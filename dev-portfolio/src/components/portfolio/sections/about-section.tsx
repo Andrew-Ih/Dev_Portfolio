@@ -89,7 +89,7 @@ export function AboutSection() {
                 <Badge 
                   key={skill} 
                   variant="secondary" 
-                  className="bg-accent hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer"
+                  className="bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer"
                 >
                   {skill}
                 </Badge>

@@ -11,7 +11,8 @@ interface WelcomeScreenProps {
 export function WelcomeScreen({ onEnter, isAnimating }: WelcomeScreenProps) {
   return (
     <div 
-      className={`fixed inset-0 z-50 flex items-center justify-center gradient-hero transition-transform duration-700 ease-in-out ${
+      // className={`fixed inset-0 z-50 flex items-center justify-center gradient-hero transition-transform duration-700 ease-in-out ${
+      className={`fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 transition-transform duration-700 ease-in-out ${
         isAnimating ? 'animate-slide-up' : ''
       }`}
     >

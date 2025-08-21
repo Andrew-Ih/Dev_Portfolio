@@ -6,30 +6,33 @@ import { Link } from "react-router-dom";
 
 const featuredProjects = [
   {
-    title: "E-Commerce Platform",
-    description: "Full-stack e-commerce solution with real-time inventory management, payment processing, and admin dashboard. Built for scalability with microservices architecture.",
-    image: "/placeholder-project-1.jpg",
-    technologies: ["React", "Node.js", "PostgreSQL", "Stripe", "AWS", "Docker"],
-    github: "https://github.com/andrew/ecommerce",
-    demo: "https://ecommerce-demo.com",
+    title: "AI-Powered Expense Tracker",
+    description: "Full-stack SaaS web app that allows users to track expenses, manage budgets and receive AI-powered financial insights through natural language queries using an AI assistant chatbot, currently serving 20+ users.",
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2026&q=80",
+    // image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    technologies: ["Node.js", "TypeScript", "Express.js", "AWS", "Next.js", "OpenAI", "REST API", "AWS Lambda", "DynamoDB", "CloudFormation", "GitHub Actions"],
+    github: 'https://github.com/Andrew-Ih/ExpenseTracker',
+    demo: 'https://github.com/Andrew-Ih/ExpenseTracker',
     featured: true
   },
   {
-    title: "Task Management App",
-    description: "Collaborative project management tool with real-time updates, file sharing, and team analytics. Features drag-and-drop interface and mobile responsiveness.",
-    image: "/placeholder-project-2.jpg",
-    technologies: ["React", "Firebase", "Tailwind CSS", "TypeScript"],
-    github: "https://github.com/andrew/taskmanager",
-    demo: "https://taskmanager-demo.com",
+    title: "StockTracker",
+    description: "Built and deployed a .NET Azure Function App serving RESTful APIs for stock data, top gainers, and losers. Created a responsive frontend Azure Static Web App with automated CI/CD pipelines and zero-downtime deployments.",
+    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    technologies: ["C#", "Azure", "Next.js", "DevOps", "CI/CD Pipelines", "REST API", "Tailwind CSS", "Postman", "Azure Authentication"],
+    github: 'https://github.com/Andrew-Ih/StockTrackerBackend',
+    demo: 'https://github.com/Andrew-Ih/StockTrackerBackend',
     featured: true
   },
   {
-    title: "Weather Dashboard",
-    description: "Interactive weather dashboard with location-based forecasts, historical data visualization, and severe weather alerts. Integrates multiple weather APIs.",
-    image: "/placeholder-project-3.jpg",
-    technologies: ["Vue.js", "Chart.js", "Express.js", "MongoDB"],
-    github: "https://github.com/andrew/weather-app",
-    demo: "https://weather-demo.com",
+    title: "Movie Discovery Web App",
+    description: "Responsive movie search platform using React and Vite to deliver real-time movie metadata via the TMDB API. Features debouncing logic to optimize API requests, reducing server load by ~90% during user search input.",
+    // image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    image: "https://images.unsplash.com/photo-1440404653325-ab127d49abc1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    // image: "https://images.unsplash.com/photo-1616530940355-351fabd9524b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2135&q=80",
+    technologies: ["React", "Vite", "Tailwind CSS", "AppWrite", "REST API", "TMDB API"],
+    github: 'https://github.com/Andrew-Ih/BingeBuddy',
+    demo: "https://movie-discovery-demo.com",
     featured: true
   }
 ];
@@ -132,7 +135,7 @@ export function ProjectsSection() {
         </div>
 
         {/* Skills Highlight */}
-        <div className="space-y-6 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+        {/* <div className="space-y-6 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
           <h2 className="text-3xl font-bold gradient-text text-center">
             What I Bring to Your Project
           </h2>
@@ -174,7 +177,7 @@ export function ProjectsSection() {
               </CardContent>
             </Card>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

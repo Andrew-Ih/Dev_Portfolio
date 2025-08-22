@@ -5,6 +5,8 @@ interface Point {
   y: number;
   vx: number;
   vy: number;
+  pulse: number;
+  pulseSpeed: number;
 }
 
 export function AnimatedLines() {
@@ -34,6 +36,8 @@ export function AnimatedLines() {
       y: Math.random() * canvas.height,
       vx: (Math.random() - 0.5) * 0.5,
       vy: (Math.random() - 0.5) * 0.5,
+      pulse: Math.random() * Math.PI * 2,
+      pulseSpeed: 0.02 + Math.random() * 0.03,
     }));
 
     const animate = () => {
@@ -51,6 +55,7 @@ export function AnimatedLines() {
       pointsRef.current.forEach((point) => {
         point.x += point.vx;
         point.y += point.vy;
+        point.pulse += point.pulseSpeed;
         
         // Bounce off edges
         if (point.x <= 0 || point.x >= canvas.width) point.vx *= -1;
@@ -116,6 +121,24 @@ export function AnimatedLines() {
           }
         }
       }
+      
+      // Draw pulsing nodes
+      points.forEach((point) => {
+        const pulseSize = 2 + Math.sin(point.pulse) * 1.5;
+        const pulseOpacity = 0.3 + Math.sin(point.pulse) * 0.4;
+        
+        // Outer glow
+        ctx.beginPath();
+        ctx.arc(point.x, point.y, pulseSize * 2, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${pulseOpacity * 0.2})`;
+        ctx.fill();
+        
+        // Inner node
+        ctx.beginPath();
+        ctx.arc(point.x, point.y, pulseSize, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${pulseOpacity})`;
+        ctx.fill();
+      });
       
       animationRef.current = requestAnimationFrame(animate);
     };

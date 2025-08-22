@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { AnimatedLines } from "./animated-lines";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 
 interface WelcomeScreenProps {
   onEnter: () => void;
@@ -11,7 +11,9 @@ interface WelcomeScreenProps {
 export function WelcomeScreen({ onEnter, isAnimating }: WelcomeScreenProps) {
   return (
     <div 
-      className={`fixed inset-0 z-50 flex items-center justify-center gradient-hero transition-transform duration-700 ease-in-out ${
+      // className={`fixed inset-0 z-50 flex items-centegitr justify-center gradient-hero transition-transform duration-700 ease-in-out ${
+      // className={`fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 transition-transform duration-700 ease-in-out ${
+      className={`fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-black transition-transform duration-700 ease-in-out ${
         isAnimating ? 'animate-slide-up' : ''
       }`}
     >
@@ -20,27 +22,60 @@ export function WelcomeScreen({ onEnter, isAnimating }: WelcomeScreenProps) {
       
       {/* Content */}
       <div className="relative z-10 text-center space-y-8 max-w-4xl mx-auto px-6">
-        <div className="space-y-4 animate-fade-in-up">
-          <h1 className="text-5xl md:text-7xl font-bold text-white drop-shadow-2xl">
-            Hi, I'm <span className="gradient-text-enhanced">Andrew Iheanacho</span>
+        <div className="space-y-6 animate-fade-in-up">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white drop-shadow-2xl leading-tight">
+            Hi, I'm{' '}
+            <span className="block mt-2 font-black drop-shadow-2xl bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent animate-shimmer" style={{ backgroundSize: '200% 100%' }}>
+              Andrew Iheanacho
+            </span>
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto leading-relaxed drop-shadow-lg font-medium">
-            Software Developer & AWS Cloud Practitioner
-          </p>
-          <p className="text-lg text-white/80 max-w-xl mx-auto drop-shadow-md">
-            Crafting digital experiences with modern technologies and cloud solutions
-          </p>
+          
+          <div className="space-y-4">
+            <p className="text-xl md:text-2xl text-white/95 max-w-2xl mx-auto leading-relaxed drop-shadow-lg font-semibold">
+              Software Developer & AWS Cloud Practitioner
+            </p>
+            <p className="text-lg md:text-xl text-white/85 max-w-xl mx-auto drop-shadow-md font-light leading-relaxed">
+              Crafting digital experiences with modern technologies and cloud solutions
+            </p>
+          </div>
         </div>
         
-        <div className="animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+        <div className="animate-fade-in-up space-y-6" style={{ animationDelay: '0.3s' }}>
           <Button 
             onClick={onEnter}
             size="lg"
-            className="group relative overflow-hidden bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border border-white/30 px-8 py-4 text-lg font-semibold shadow-2xl hover:shadow-white/20 transition-all duration-300"
+            variant="outline"
+            className="group border-2 border-white/30 bg-transparent hover:bg-white/10 text-white px-10 py-4 text-lg font-bold transition-all duration-300 transform hover:scale-105 rounded-full backdrop-blur-sm"
           >
             View My Work
-            <ArrowDown className="ml-2 h-5 w-5 group-hover:translate-y-1 transition-transform duration-300" />
+            <ArrowDown className="ml-3 h-5 w-5 group-hover:animate-bounce group-hover:translate-y-1 transition-transform duration-300" />
           </Button>
+        </div>
+        
+        {/* Social Links */}
+        <div className="animate-fade-in-up flex justify-center space-x-6" style={{ animationDelay: '0.4s' }}>
+          <a 
+            href="https://github.com/Andrew-Ih" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="group p-4 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white/80 hover:text-white transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-white/20"
+          >
+            <Github className="h-7 w-7" />
+          </a>
+          <a 
+            href="https://www.linkedin.com/in/andrew-iheanacho-ab330b232/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="group p-4 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white/80 hover:text-white transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-white/20"
+          >
+            <Linkedin className="h-7 w-7" />
+          </a>
+          <a 
+            href="mailto:andrewiheanacho811@gmail.com" 
+            className="group p-4 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white/80 hover:text-white transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-white/20"
+          >
+            <Mail className="h-7 w-7" />
+          </a>
         </div>
       </div>
     </div>

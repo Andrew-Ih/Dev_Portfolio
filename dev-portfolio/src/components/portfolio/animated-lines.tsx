@@ -40,9 +40,12 @@ export function AnimatedLines() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
       // Get CSS variables for colors
-      const primaryColor = getComputedStyle(document.documentElement)
-        .getPropertyValue('--primary').trim();
-      const lineColor = `hsl(${primaryColor})`;
+      // const primaryColor = getComputedStyle(document.documentElement)
+      //   .getPropertyValue('--primary').trim();
+      // const lineColor = `hsl(${primaryColor})`;
+
+      // Use white color for lines
+      const lineColor = 'rgb(255, 255, 255)';
       
       // Update points
       pointsRef.current.forEach((point) => {
@@ -75,7 +78,8 @@ export function AnimatedLines() {
             ctx.beginPath();
             ctx.moveTo(points[i].x, points[i].y);
             ctx.lineTo(points[j].x, points[j].y);
-            ctx.strokeStyle = lineColor.replace(')', `, ${opacity})`).replace('hsl', 'hsla');
+            // ctx.strokeStyle = lineColor.replace(')', `, ${opacity})`).replace('hsl', 'hsla');
+            ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
             ctx.lineWidth = 1;
             ctx.stroke();
             
@@ -98,11 +102,13 @@ export function AnimatedLines() {
                 ctx.lineTo(points[j].x, points[j].y);
                 ctx.lineTo(points[k].x, points[k].y);
                 ctx.closePath();
-                ctx.fillStyle = lineColor.replace(')', `, ${triangleOpacity})`).replace('hsl', 'hsla');
+                // ctx.fillStyle = lineColor.replace(')', `, ${triangleOpacity})`).replace('hsl', 'hsla');
+                ctx.fillStyle = `rgba(255, 255, 255, ${triangleOpacity})`;
                 ctx.fill();
                 
                 // Draw triangle edges
-                ctx.strokeStyle = lineColor.replace(')', `, ${triangleOpacity * 2})`).replace('hsl', 'hsla');
+                // ctx.strokeStyle = lineColor.replace(')', `, ${triangleOpacity * 2})`).replace('hsl', 'hsla');
+                ctx.strokeStyle = `rgba(255, 255, 255, ${triangleOpacity * 2})`;
                 ctx.lineWidth = 0.5;
                 ctx.stroke();
               }

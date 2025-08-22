@@ -49,7 +49,7 @@ export function AnimatedLines() {
       const lineColor = 'rgb(255, 255, 255)';
       
       // Create constellation highlights occasionally
-      if (currentTime - lastHighlightTime.current > 8000 + Math.random() * 2000) {
+      if (currentTime - lastHighlightTime.current > 5000 + Math.random() * 2000) {
         const triangles: [Point, Point, Point][] = [];
         const maxDistance = 150;
         

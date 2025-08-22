@@ -44,10 +44,11 @@ export function WelcomeScreen({ onEnter, isAnimating }: WelcomeScreenProps) {
           <Button 
             onClick={onEnter}
             size="lg"
-            className="group relative overflow-hidden bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0 px-10 py-4 text-lg font-bold shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 rounded-full"
+            variant="outline"
+            className="group border-2 border-white/30 bg-transparent hover:bg-white/10 text-white px-10 py-4 text-lg font-bold transition-all duration-300 transform hover:scale-105 rounded-full backdrop-blur-sm"
           >
             View My Work
-            <ArrowDown className="ml-3 h-5 w-5 group-hover:translate-y-1 transition-transform duration-300" />
+            <ArrowDown className="ml-3 h-5 w-5 group-hover:animate-bounce group-hover:translate-y-1 transition-transform duration-300" />
           </Button>
         </div>
         

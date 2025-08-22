@@ -25,7 +25,7 @@ export function WelcomeScreen({ onEnter, isAnimating }: WelcomeScreenProps) {
         <div className="space-y-6 animate-fade-in-up">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white drop-shadow-2xl leading-tight">
             Hi, I'm{' '}
-            <span className="block mt-2 text-white font-black drop-shadow-2xl">
+            <span className="block mt-2 font-black drop-shadow-2xl bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent animate-shimmer" style={{ backgroundSize: '200% 100%' }}>
               Andrew Iheanacho
             </span>
           </h1>

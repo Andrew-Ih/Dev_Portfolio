@@ -13,6 +13,8 @@ export function AnimatedLines() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const pointsRef = useRef<Point[]>([]);
   const animationRef = useRef<number>();
+  const highlightedTriangles = useRef<{ points: [Point, Point, Point]; highlight: number; maxHighlight: number }[]>([]);
+  const lastHighlightTime = useRef<number>(0);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -40,16 +42,46 @@ export function AnimatedLines() {
       pulseSpeed: 0.02 + Math.random() * 0.03,
     }));
 
-    const animate = () => {
+    const animate = (currentTime: number = 0) => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
-      // Get CSS variables for colors
-      // const primaryColor = getComputedStyle(document.documentElement)
-      //   .getPropertyValue('--primary').trim();
-      // const lineColor = `hsl(${primaryColor})`;
-
       // Use white color for lines
       const lineColor = 'rgb(255, 255, 255)';
+      
+      // Create constellation highlights occasionally
+      if (currentTime - lastHighlightTime.current > 8000 + Math.random() * 2000) {
+        const triangles: [Point, Point, Point][] = [];
+        const maxDistance = 150;
+        
+        for (let i = 0; i < pointsRef.current.length; i++) {
+          for (let j = i + 1; j < pointsRef.current.length; j++) {
+            for (let k = j + 1; k < pointsRef.current.length; k++) {
+              const p1 = pointsRef.current[i];
+              const p2 = pointsRef.current[j];
+              const p3 = pointsRef.current[k];
+              
+              const d1 = Math.sqrt((p1.x - p2.x) ** 2 + (p1.y - p2.y) ** 2);
+              const d2 = Math.sqrt((p2.x - p3.x) ** 2 + (p2.y - p3.y) ** 2);
+              const d3 = Math.sqrt((p3.x - p1.x) ** 2 + (p3.y - p1.y) ** 2);
+              
+              if (d1 < maxDistance && d2 < maxDistance && d3 < maxDistance) {
+                triangles.push([p1, p2, p3]);
+              }
+            }
+          }
+        }
+        
+        if (triangles.length > 0) {
+          const randomTriangle = triangles[Math.floor(Math.random() * triangles.length)];
+          highlightedTriangles.current.push({
+            points: randomTriangle,
+            highlight: 0,
+            maxHighlight: 60
+          });
+        }
+        
+        lastHighlightTime.current = currentTime;
+      }
       
       // Update points
       pointsRef.current.forEach((point) => {
@@ -107,12 +139,10 @@ export function AnimatedLines() {
                 ctx.lineTo(points[j].x, points[j].y);
                 ctx.lineTo(points[k].x, points[k].y);
                 ctx.closePath();
-                // ctx.fillStyle = lineColor.replace(')', `, ${triangleOpacity})`).replace('hsl', 'hsla');
                 ctx.fillStyle = `rgba(255, 255, 255, ${triangleOpacity})`;
                 ctx.fill();
                 
                 // Draw triangle edges
-                // ctx.strokeStyle = lineColor.replace(')', `, ${triangleOpacity * 2})`).replace('hsl', 'hsla');
                 ctx.strokeStyle = `rgba(255, 255, 255, ${triangleOpacity * 2})`;
                 ctx.lineWidth = 0.5;
                 ctx.stroke();
@@ -138,6 +168,40 @@ export function AnimatedLines() {
         ctx.arc(point.x, point.y, pulseSize, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(255, 255, 255, ${pulseOpacity})`;
         ctx.fill();
+      });
+      
+      // Update and draw constellation highlights
+      highlightedTriangles.current = highlightedTriangles.current.filter(triangle => {
+        triangle.highlight++;
+        
+        const progress = triangle.highlight / triangle.maxHighlight;
+        const highlightOpacity = Math.sin(progress * Math.PI) * 0.8;
+        
+        if (highlightOpacity > 0) {
+          // Draw highlighted triangle with golden glow
+          ctx.beginPath();
+          ctx.moveTo(triangle.points[0].x, triangle.points[0].y);
+          ctx.lineTo(triangle.points[1].x, triangle.points[1].y);
+          ctx.lineTo(triangle.points[2].x, triangle.points[2].y);
+          ctx.closePath();
+          
+          // Golden fill
+          ctx.fillStyle = `rgba(255, 215, 0, ${highlightOpacity * 0.3})`;
+          ctx.fill();
+          
+          // Golden edges
+          ctx.strokeStyle = `rgba(255, 215, 0, ${highlightOpacity})`;
+          ctx.lineWidth = 2;
+          ctx.stroke();
+          
+          // Glow effect
+          ctx.shadowColor = 'rgba(255, 215, 0, 0.5)';
+          ctx.shadowBlur = 10;
+          ctx.stroke();
+          ctx.shadowBlur = 0;
+        }
+        
+        return triangle.highlight < triangle.maxHighlight;
       });
       
       animationRef.current = requestAnimationFrame(animate);

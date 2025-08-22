@@ -9,9 +9,18 @@ interface Point {
   pulseSpeed: number;
 }
 
+interface Planet {
+  distance: number;
+  angle: number;
+  speed: number;
+  radius: number;
+  color: string;
+}
+
 export function AnimatedLines() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const pointsRef = useRef<Point[]>([]);
+  const planetsRef = useRef<Planet[]>([]);
   const animationRef = useRef<number>();
   const highlightedTriangles = useRef<{ points: [Point, Point, Point]; highlight: number; maxHighlight: number }[]>([]);
   const lastHighlightTime = useRef<number>(0);
@@ -42,8 +51,62 @@ export function AnimatedLines() {
       pulseSpeed: 0.02 + Math.random() * 0.03,
     }));
 
+    // Initialize solar system
+    planetsRef.current = [
+      { distance: 80, angle: 0, speed: 0.02, radius: 3, color: '#8c7853' }, // Mercury
+      { distance: 100, angle: 0, speed: 0.015, radius: 4, color: '#ffc649' }, // Venus
+      { distance: 120, angle: 0, speed: 0.01, radius: 4, color: '#6b93d6' }, // Earth
+      { distance: 140, angle: 0, speed: 0.008, radius: 3, color: '#c1440e' }, // Mars
+      { distance: 180, angle: 0, speed: 0.005, radius: 8, color: '#d8ca9d' }, // Jupiter
+      { distance: 220, angle: 0, speed: 0.003, radius: 7, color: '#fad5a5' }, // Saturn
+    ];
+
     const animate = (currentTime: number = 0) => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      const centerX = 250;
+      const centerY = 250;
+      
+      // Draw solar system in far background
+      ctx.globalAlpha = 0.3;
+      
+      // Draw orbit paths
+      planetsRef.current.forEach(planet => {
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, planet.distance, 0, Math.PI * 2);
+        ctx.stroke();
+      });
+      
+      // Draw sun
+      ctx.fillStyle = '#ffd700';
+      ctx.beginPath();
+      ctx.arc(centerX, centerY, 12, 0, Math.PI * 2);
+      ctx.fill();
+      
+      // Update and draw planets
+      planetsRef.current.forEach(planet => {
+        planet.angle += planet.speed;
+        const x = centerX + Math.cos(planet.angle) * planet.distance;
+        const y = centerY + Math.sin(planet.angle) * planet.distance;
+        
+        ctx.fillStyle = planet.color;
+        ctx.beginPath();
+        ctx.arc(x, y, planet.radius, 0, Math.PI * 2);
+        ctx.fill();
+        
+        // Saturn rings
+        if (planet.color === '#fad5a5') {
+          ctx.strokeStyle = planet.color;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.arc(x, y, planet.radius + 3, 0, Math.PI * 2);
+          ctx.stroke();
+        }
+      });
+      
+      ctx.globalAlpha = 1;
       
       // Use white color for lines
       const lineColor = 'rgb(255, 255, 255)';

@@ -51,7 +51,7 @@ export function AnimatedLines() {
       pulseSpeed: 0.02 + Math.random() * 0.03,
     }));
 
-    // Initialize solar system
+    // Initialize solar system (will be scaled in animation)
     planetsRef.current = [
       { distance: 80, angle: 0, speed: 0.02, radius: 3, color: '#8c7853' }, // Mercury
       { distance: 100, angle: 0, speed: 0.015, radius: 4, color: '#ffc649' }, // Venus
@@ -64,8 +64,9 @@ export function AnimatedLines() {
     const animate = (currentTime: number = 0) => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
-      const centerX = 250;
-      const centerY = 250;
+      const scale = Math.min(canvas.width / 1200, 1); // Scale down on smaller screens
+      const centerX = 150 * scale + 100; // Keep in top left with scaling
+      const centerY = 150 * scale + 100;
       
       // Draw solar system in far background
       ctx.globalAlpha = 0.3;
@@ -75,25 +76,25 @@ export function AnimatedLines() {
         ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
         ctx.lineWidth = 1;
         ctx.beginPath();
-        ctx.arc(centerX, centerY, planet.distance, 0, Math.PI * 2);
+        ctx.arc(centerX, centerY, planet.distance * scale, 0, Math.PI * 2);
         ctx.stroke();
       });
       
       // Draw sun
       ctx.fillStyle = '#ffd700';
       ctx.beginPath();
-      ctx.arc(centerX, centerY, 12, 0, Math.PI * 2);
+      ctx.arc(centerX, centerY, 12 * scale, 0, Math.PI * 2);
       ctx.fill();
       
       // Update and draw planets
       planetsRef.current.forEach(planet => {
         planet.angle += planet.speed;
-        const x = centerX + Math.cos(planet.angle) * planet.distance;
-        const y = centerY + Math.sin(planet.angle) * planet.distance;
+        const x = centerX + Math.cos(planet.angle) * planet.distance * scale;
+        const y = centerY + Math.sin(planet.angle) * planet.distance * scale;
         
         ctx.fillStyle = planet.color;
         ctx.beginPath();
-        ctx.arc(x, y, planet.radius, 0, Math.PI * 2);
+        ctx.arc(x, y, planet.radius * scale, 0, Math.PI * 2);
         ctx.fill();
         
         // Saturn rings
@@ -101,7 +102,7 @@ export function AnimatedLines() {
           ctx.strokeStyle = planet.color;
           ctx.lineWidth = 1;
           ctx.beginPath();
-          ctx.arc(x, y, planet.radius + 3, 0, Math.PI * 2);
+          ctx.arc(x, y, (planet.radius + 3) * scale, 0, Math.PI * 2);
           ctx.stroke();
         }
       });

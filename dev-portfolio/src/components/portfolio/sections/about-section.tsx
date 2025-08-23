@@ -137,9 +137,11 @@ export function AboutSection() {
                   size="sm"
                   asChild
                 >
-                  <a href="/AndrewIheanacho-Resume.pdf" download="AndrewIheanacho_Resume.pdf">
+                  {/* <a href="/AndrewIheanacho-Resume.pdf" download="AndrewIheanacho_Resume.pdf"> */}
+                  <a href="/AndrewIheanacho-Resume.pdf" target="_blank" rel="noopener noreferrer">
+
                     <Download className="h-4 w-4 mr-2" />
-                    Download Resume
+                    View Resume
                   </a>
                 </Button>
                 

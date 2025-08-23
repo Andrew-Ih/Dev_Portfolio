@@ -123,11 +123,11 @@ export function AboutSection() {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3 text-sm">
                   <MapPin className="h-4 w-4 text-primary" />
-                  <span className="text-foreground-muted">Remote / Nigeria</span>
+                  <span className="text-foreground-muted">Winnipeg, Canada</span>
                 </div>
                 <div className="flex items-center space-x-3 text-sm">
                   <Mail className="h-4 w-4 text-primary" />
-                  <span className="text-foreground-muted">andrew@example.com</span>
+                  <span className="text-foreground-muted">andrewiheanacho811@gmail.com</span>
                 </div>
               </div>
 
@@ -135,17 +135,26 @@ export function AboutSection() {
                 <Button 
                   className="w-full bg-primary hover:bg-primary-dark text-primary-foreground"
                   size="sm"
+                  asChild
                 >
-                  <Download className="h-4 w-4 mr-2" />
-                  Download Resume
+                  {/* <a href="/AndrewIheanacho-Resume.pdf" download="AndrewIheanacho_Resume.pdf"> */}
+                  <a href="/AndrewIheanacho-Resume.pdf" target="_blank" rel="noopener noreferrer">
+
+                    <Download className="h-4 w-4 mr-2" />
+                    View Resume
+                  </a>
                 </Button>
                 
                 <div className="flex space-x-2">
-                  <Button variant="outline" size="sm" className="flex-1">
-                    <Linkedin className="h-4 w-4" />
+                  <Button variant="outline" size="sm" className="flex-1" asChild>
+                    <a href="https://www.linkedin.com/in/andrew-iheanacho-ab330b232/" target="_blank" rel="noopener noreferrer">
+                      <Linkedin className="h-4 w-4" />
+                    </a>
                   </Button>
-                  <Button variant="outline" size="sm" className="flex-1">
-                    <Github className="h-4 w-4" />
+                  <Button variant="outline" size="sm" className="flex-1" asChild>
+                    <a href="https://github.com/Andrew-Ih" target="_blank" rel="noopener noreferrer">
+                      <Github className="h-4 w-4" />
+                    </a>
                   </Button>
                 </div>
               </div>

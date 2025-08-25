@@ -39,6 +39,15 @@ export const allProjects: Project[] = [
     category: "Full Stack"
   },
   {
+    title: "P2P File Sharing Server",
+    description: "Peer-to-peer file sharing application built with Python using TCP sockets, gossip-based communication, and metadata synchronization. Features CLI interface, web stats dashboard, automatic peer cleanup, and SHA256-based file IDs for secure file operations.",
+    technologies: ["Python", "TCP Sockets", "Gossip Protocol", "SHA256", "HTML", "REST API", "Web Server", "CLI"],
+    github: "https://github.com/Andrew-Ih/P2P_FileSharing_Server",
+    demo: null,
+    year: "2025",
+    category: "Backend"
+  },
+  {
     title: "Weather App",
     description: "A responsive weather application built with React.js and Tailwind CSS. Users can search for any city or country to instantly view the current weather and a 5-day forecast. The app fetches real-time weather data from external APIs.",
     technologies: ["React", "Vite", "JavaScript", "Tailwind CSS", "Weather API", "REST API"],

@@ -12,7 +12,7 @@ const featuredProjects = [
     // image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
     technologies: ["Node.js", "TypeScript", "Express.js", "AWS", "Next.js", "OpenAI", "REST API", "AWS Lambda", "DynamoDB", "CloudFormation", "GitHub Actions"],
     github: 'https://github.com/Andrew-Ih/ExpenseTracker',
-    demo: 'https://github.com/Andrew-Ih/ExpenseTracker',
+    demo: 'https://d1o22euki608lo.cloudfront.net/',
     featured: true
   },
   {
@@ -32,7 +32,7 @@ const featuredProjects = [
     // image: "https://images.unsplash.com/photo-1616530940355-351fabd9524b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2135&q=80",
     technologies: ["React", "Vite", "Tailwind CSS", "AppWrite", "REST API", "TMDB API"],
     github: 'https://github.com/Andrew-Ih/BingeBuddy',
-    demo: "https://movie-discovery-demo.com",
+    demo: "https://binge-buddy-phi.vercel.app/",
     featured: true
   }
 ];

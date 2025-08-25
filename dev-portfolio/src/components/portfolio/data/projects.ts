@@ -7,90 +7,116 @@ export interface Project {
   year: string;
   category: string;
 }
+export const categories = ["All", "Full Stack", "Frontend", "Backend"];
+export const years = ["All", "2025", "2024"];
 
 export const allProjects: Project[] = [
   {
-    title: "E-Commerce Platform",
-    description: "Full-stack e-commerce solution with payment processing",
-    technologies: ["React", "Node.js", "PostgreSQL", "Stripe", "AWS"],
-    github: "https://github.com/andrew/ecommerce",
-    demo: "https://ecommerce-demo.com",
-    year: "2023",
+    title: "AI-Powered Expense Tracker",
+    description: "Full-stack SaaS web app that allows users to track expenses, manage budgets and receive AI-powered financial insights through natural language queries using an AI assistant chatbot, currently serving 20+ users.",
+    technologies: ["Node.js", "TypeScript", "Express.js", "AWS", "Next.js", "OpenAI", "REST API", "AWS Lambda", "DynamoDB", "CloudFormation", "GitHub Actions"],
+    github: "https://github.com/Andrew-Ih/ExpenseTracker",
+    demo: "https://d1o22euki608lo.cloudfront.net/",
+    year: "2025",
     category: "Full Stack"
   },
   {
-    title: "Task Management App", 
-    description: "Collaborative project management with real-time updates",
-    technologies: ["React", "Firebase", "Tailwind CSS", "TypeScript"],
-    github: "https://github.com/andrew/taskmanager",
-    demo: "https://taskmanager-demo.com",
-    year: "2023",
+    title: "StockTracker",
+    description: "Built and deployed a .NET Azure Function App serving RESTful APIs for stock data, top gainers, and losers. Created a responsive frontend Azure Static Web App with automated CI/CD pipelines and zero-downtime deployments.",
+    technologies: ["C#", "Azure", "Next.js", "DevOps", "CI/CD Pipelines", "REST API", "Tailwind CSS", "Postman", "Azure Authentication"],
+    github: "https://github.com/Andrew-Ih/StockTrackerBackend",
+    demo: "https://github.com/Andrew-Ih/StockTrackerBackend",
+    year: "2025",
+    category: "Full Stack"
+  },
+  {
+    title: "Movie Discovery Web App",
+    description: "Responsive movie search platform using React and Vite to deliver real-time movie metadata via the TMDB API. Features debouncing logic to optimize API requests, reducing server load by ~90% during user search input.",
+    technologies: ["React", "Vite", "Tailwind CSS", "AppWrite", "REST API", "TMDB API"],
+    github: "https://github.com/Andrew-Ih/BingeBuddy",
+    demo: "https://binge-buddy-phi.vercel.app/",
+    year: "2025",
+    category: "Full Stack"
+  },
+  {
+    title: "Weather App",
+    description: "A responsive weather application built with React.js and Tailwind CSS. Users can search for any city or country to instantly view the current weather and a 5-day forecast. The app fetches real-time weather data from external APIs.",
+    technologies: ["React", "Vite", "JavaScript", "Tailwind CSS", "Weather API", "REST API"],
+    github: "https://github.com/Andrew-Ih/weather-app",
+    demo: "https://weather-app-neon-sigma-87.vercel.app/",
+    year: "2025",
+    category: "Full Stack"
+  },
+  {
+    title: "Reciply", 
+    description: "Landing page for an Android recipe collection mobile application developed in Software Engineering class. The mobile app was built with Java in Android Studio for recipe management and sharing.",
+    technologies: ["JavaScript", "HTML", "CSS"],
+    github: "https://github.com/Andrew-Ih/Reciply",
+    demo: "https://andrew-ih.github.io/Reciply/",
+    year: "2025",
     category: "Frontend"
   },
   {
-    title: "Weather Dashboard",
-    description: "Interactive weather app with data visualization",
-    technologies: ["Vue.js", "Chart.js", "Express.js", "MongoDB"],
-    github: "https://github.com/andrew/weather-app",
-    demo: "https://weather-demo.com",
-    year: "2023",
-    category: "Full Stack"
+    title: "Electric Vehicle Marketplace",
+    description: "Vertical prototype for a luxury electric vehicle marketplace built following modern frontend principles. Features responsive design, intuitive user interface, and adherence to web accessibility standards and best practices.",
+    technologies: ["JavaScript", "HTML", "CSS"],
+    github: "https://github.com/Andrew-Ih/COMP-3020-M3",
+    demo: "https://andrew-ih.github.io/COMP-3020-M3/",
+    year: "2024",
+    category: "Frontend"
   },
   {
-    title: "Chat Application",
-    description: "Real-time messaging with file sharing and group chats",
-    technologies: ["React", "Socket.io", "Node.js", "Redis"],
-    github: "https://github.com/andrew/chat-app",
-    demo: "https://chat-demo.com",
-    year: "2022",
-    category: "Full Stack"
+    title: "To Do List",
+    description: "Interactive task management application with add, edit, and delete functionality. Features local storage persistence and clean user interface design.",
+    technologies: ["JavaScript", "HTML", "CSS"],
+    github: "https://github.com/Andrew-Ih/To-do-list",
+    demo: "https://andrew-ih.github.io/To-do-list/",
+    year: "2024",
+    category: "Frontend"
   },
   {
     title: "Portfolio Website",
-    description: "Personal portfolio with animated interactions",
-    technologies: ["React", "Framer Motion", "Tailwind CSS"],
-    github: "https://github.com/andrew/portfolio",
-    demo: "https://andrew-portfolio.com",
-    year: "2022",
+    description: "Personal portfolio website showcasing projects and skills with smooth animations and responsive design. Built with vanilla JavaScript and modern CSS techniques.",
+    technologies: ["JavaScript", "HTML", "CSS"],
+    github: "https://github.com/Andrew-Ih/Portfolio_website",
+    demo: "https://andrew-ih.github.io/Portfolio_website/",
+    year: "2024",
     category: "Frontend"
   },
   {
-    title: "API Gateway",
-    description: "Microservices API gateway with rate limiting",
-    technologies: ["Node.js", "Express", "Redis", "Docker"],
-    github: "https://github.com/andrew/api-gateway",
-    demo: null,
-    year: "2022",
-    category: "Backend"
+    title: "Etch a Sketch",
+    description: "Interactive drawing application inspired by the classic toy. Features customizable grid sizes, color options, and responsive design for creative digital sketching.",
+    technologies: ["JavaScript", "HTML", "CSS"],
+    github: "https://github.com/Andrew-Ih/etch_a_sketch",
+    demo: "https://andrew-ih.github.io/etch_a_sketch/",
+    year: "2024",
+    category: "Frontend"
   },
   {
-    title: "Blog CMS",
-    description: "Content management system for bloggers",
-    technologies: ["Next.js", "Prisma", "PostgreSQL", "Vercel"],
-    github: "https://github.com/andrew/blog-cms",
-    demo: "https://blog-cms-demo.com",
-    year: "2022",
-    category: "Full Stack"
+    title: "Sign Up Form",
+    description: "Responsive registration form with client-side validation, password confirmation, and modern styling. Demonstrates form handling and user input validation techniques.",
+    technologies: ["HTML", "CSS"],
+    github: "https://github.com/Andrew-Ih/Sign_up_form",
+    demo: "https://andrew-ih.github.io/Sign_up_form/",
+    year: "2024",
+    category: "Frontend"
   },
   {
-    title: "Mobile App Backend",
-    description: "REST API for mobile fitness tracking app",
-    technologies: ["Python", "Django", "PostgreSQL", "AWS"],
-    github: "https://github.com/andrew/fitness-api",
-    demo: null,
-    year: "2021",
-    category: "Backend"
+    title: "Calculator",
+    description: "Functional calculator application with basic arithmetic operations. Features keyboard support, error handling, and clean interface design.",
+    technologies: ["JavaScript", "HTML", "CSS"],
+    github: "https://github.com/Andrew-Ih/calculator",
+    demo: "https://andrew-ih.github.io/calculator/",
+    year: "2024",
+    category: "Frontend"
   },
   {
-    title: "Data Visualization Tool",
-    description: "Interactive charts for business analytics",
-    technologies: ["D3.js", "React", "Python", "Pandas"],
-    github: "https://github.com/andrew/data-viz",
-    demo: "https://dataviz-demo.com",
-    year: "2021",
+    title: "Odin Recipes",
+    description: "Recipe collection website featuring structured content and navigation. Demonstrates semantic HTML structure and CSS styling fundamentals.",
+    technologies: ["HTML", "CSS"],
+    github: "https://github.com/Andrew-Ih/odin-recipes2",
+    demo: "https://andrew-ih.github.io/odin-recipes2/",
+    year: "2024",
     category: "Frontend"
   }
 ];
-
-export const categories = ["All", "Full Stack", "Frontend", "Backend", "Mobile"];
-export const years = ["All", "2025", "2024", "2023"];

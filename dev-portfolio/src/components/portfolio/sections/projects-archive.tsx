@@ -89,8 +89,8 @@ const allProjects = [
   }
 ];
 
-const categories = ["All", "Full Stack", "Frontend", "Backend"];
-const years = ["All", "2023", "2022", "2021"];
+const categories = ["All", "Full Stack", "Frontend", "Backend", "Mobile"];
+const years = ["All", "2025", "2024", "2023"];
 
 export function ProjectsArchive() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -231,7 +231,7 @@ export function ProjectsArchive() {
 
                   {/* Technologies */}
                   <div className="flex flex-wrap gap-1">
-                    {project.technologies.slice(0, 3).map((tech) => (
+                    {project.technologies.map((tech) => (
                       <Badge 
                         key={tech}
                         variant="secondary"
@@ -240,11 +240,11 @@ export function ProjectsArchive() {
                         {tech}
                       </Badge>
                     ))}
-                    {project.technologies.length > 3 && (
+                    {/* {project.technologies.length > 3 && (
                       <Badge variant="outline" className="text-xs">
                         +{project.technologies.length - 3}
                       </Badge>
-                    )}
+                    )} */}
                   </div>
                 </div>
               </CardContent>

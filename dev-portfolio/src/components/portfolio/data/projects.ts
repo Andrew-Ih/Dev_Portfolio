@@ -57,6 +57,15 @@ export const allProjects: Project[] = [
     category: "Backend"
   },
   {
+    title: "TreeDrive File Sharing Server",
+    description: "TreeDrive is a stateful file-sharing server and command-line client system implemented in Python. It uses raw TCP sockets to allow authenticated users to upload, download, list, and delete files, while maintaining file metadata and ownership. Includes a performance analysis framework to measure throughput and latency under increasing client loads.",
+    technologies: ["Python", "TCP Sockets", "File Management", "CLI", "Concurrent Programming", "Data Persistence", "Performance Analysis"],
+    github: "https://github.com/Andrew-Ih/treedrive-file-sharing-server",
+    demo: null,
+    year: "2025",
+    category: "Backend"
+  },
+  {
     title: "Weather App",
     description: "A responsive weather application built with React.js and Tailwind CSS. Users can search for any city or country to instantly view the current weather and a 5-day forecast. The app fetches real-time weather data from external APIs.",
     technologies: ["React", "Vite", "JavaScript", "Tailwind CSS", "Weather API", "REST API"],

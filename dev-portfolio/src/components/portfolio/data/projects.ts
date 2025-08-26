@@ -39,6 +39,33 @@ export const allProjects: Project[] = [
     category: "Full Stack"
   },
   {
+    title: "P2P File Sharing Server",
+    description: "Peer-to-peer file sharing application built with Python using TCP sockets, gossip-based communication, and metadata synchronization. Features CLI interface, web stats dashboard, automatic peer cleanup, and SHA256-based file IDs for secure file operations.",
+    technologies: ["Python", "TCP Sockets", "Gossip Protocol", "SHA256", "HTML", "REST API", "Web Server", "CLI"],
+    github: "https://github.com/Andrew-Ih/P2P_FileSharing_Server",
+    demo: null,
+    year: "2025",
+    category: "Backend"
+  },
+  {
+    title: "Multi-threaded API Web Server",
+    description: "Multi-threaded API web server in Python that handles concurrent client requests efficiently. It provides APIs for file upload, download, and directory management over TCP sockets, with in-memory caching (Time To Live + invalidation) to optimize repeated access, cut latency, and stay responsive under heavy workloads.",
+    technologies: ["Python", "TCP Sockets", "Multi-threading", "HTTP Server", "Caching", "JavaScript", "HTML", "REST API", "File Management", "C"],
+    github: "https://github.com/Andrew-Ih/multithreaded-api-webserver",
+    demo: null,
+    year: "2025",
+    category: "Backend"
+  },
+  {
+    title: "TreeDrive File Sharing Server",
+    description: "TreeDrive is a stateful file-sharing server and command-line client system implemented in Python. It uses raw TCP sockets to allow authenticated users to upload, download, list, and delete files, while maintaining file metadata and ownership. Includes a performance analysis framework to measure throughput and latency under increasing client loads.",
+    technologies: ["Python", "TCP Sockets", "File Management", "CLI", "Concurrent Programming", "Data Persistence", "Performance Analysis"],
+    github: "https://github.com/Andrew-Ih/treedrive-file-sharing-server",
+    demo: null,
+    year: "2025",
+    category: "Backend"
+  },
+  {
     title: "Weather App",
     description: "A responsive weather application built with React.js and Tailwind CSS. Users can search for any city or country to instantly view the current weather and a 5-day forecast. The app fetches real-time weather data from external APIs.",
     technologies: ["React", "Vite", "JavaScript", "Tailwind CSS", "Weather API", "REST API"],

@@ -48,6 +48,15 @@ export const allProjects: Project[] = [
     category: "Backend"
   },
   {
+    title: "Multi-threaded API Web Server",
+    description: "Multi-threaded API web server in Python that handles concurrent client requests efficiently. It provides APIs for file upload, download, and directory management over TCP sockets, with in-memory caching (Time To Live + invalidation) to optimize repeated access, cut latency, and stay responsive under heavy workloads.",
+    technologies: ["Python", "TCP Sockets", "Multi-threading", "HTTP Server", "Caching", "JavaScript", "HTML", "REST API", "File Management", "C"],
+    github: "https://github.com/Andrew-Ih/multithreaded-api-webserver",
+    demo: null,
+    year: "2025",
+    category: "Backend"
+  },
+  {
     title: "Weather App",
     description: "A responsive weather application built with React.js and Tailwind CSS. Users can search for any city or country to instantly view the current weather and a 5-day forecast. The app fetches real-time weather data from external APIs.",
     technologies: ["React", "Vite", "JavaScript", "Tailwind CSS", "Weather API", "REST API"],

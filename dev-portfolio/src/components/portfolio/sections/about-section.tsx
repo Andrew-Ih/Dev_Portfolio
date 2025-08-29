@@ -55,7 +55,7 @@ export function AboutSection() {
                     Cloud Computing
                   </h3>
                   <p className="text-foreground-muted">
-                    Designing and deploying cloud infrastructure on AWS with focus 
+                    Designing and deploying cloud infrastructure on AWS & Azure with focus 
                     on scalability, security, and cost optimization.
                   </p>
                 </CardContent>
@@ -82,9 +82,10 @@ export function AboutSection() {
             </h2>
             <div className="flex flex-wrap gap-2">
               {[
-                "React", "TypeScript", "Node.js", "Python", "AWS", "Docker", 
-                "Kubernetes", "MongoDB", "PostgreSQL", "Redis", "GraphQL", 
-                "REST APIs", "Git", "CI/CD", "Terraform", "Linux"
+                "TypeScript", "JavaScript", "Python", "Java", "C#", "C++", "C", "SQL", "HTML", "CSS", "XML",
+                "Node.js", "Express.js", ".NET", "React", "Next.js", "JUnit", "Tailwind CSS", "XUnit",
+                "Microsoft Azure", "AWS", "DevOps", "CI/CD Pipelines",
+                "Git", "GitHub", "Visual Studio", "VS Code", "Webpack", "IntelliJ", "AppWrite", "Postman", "Android Studio", "Figma"
               ].map((skill) => (
                 <Badge 
                   key={skill} 

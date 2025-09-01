@@ -12,11 +12,10 @@ const experiences = [
     // description: "Leading development of scalable web applications using React, Node.js, and AWS cloud services. Architected microservices infrastructure serving 100k+ users.",
     technologies: ["C#", ".NET", "React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "MUI", "Azure DevOps", "Azure Function Apps", "Azure App Services", "XUnit", "Postman"],
     achievements: [
-      "Developing and maintaining scalable RESTful APIs in C#/.NET, applying Clean Architecture and SOLID principles to ensure maintainable, high-performance backend systems.",
-      "Designing, building, and optimizing CI/CD pipelines in Azure DevOps, leveraging deployment slots for seamless staging, validation, and production releases, reducing manual deployment time and increasing release reliability.",
-      "Refactoring frontend, backend and API endpoints for improved performance and reliability, writing unit tests with XUnit, and using Postman extensively for testing, and debugging across development environments. ",
-      "Deploying cloud services with Azure Function Apps and App Services, delivering event-driven, scalable architectures.",
-      "Creating responsive web applications using React, Next.js, TypeScript, JavaScript, Tailwind CSS, and MUI, ensuring UI consistency, accessibility, and user-centric design.",
+      "Developing and maintaining scalable RESTful APIs in C#/.NET by applying Clean Architecture and SOLID principles to ensure maintainable, high-performance backend systems.",
+      "Building and optimizing CI/CD pipelines in Azure DevOps to reduce manual deployment and increase release reliability.",
+      "Refactoring frontend, backend and API endpoints for improved performance and reliability, writing unit tests with XUnit, and using Postman extensively for testing, and debugging across development environments.",
+      "Creating responsive web applications using React, Next.js, TypeScript, JavaScript, Tailwind CSS, and MUI, to ensure UI consistency, accessibility, and user-centric design.",
       "Participating in frequent code reviews to enforce best practices, reduce technical debt, and maintain long-term scalability.",
     ]
   },
@@ -29,10 +28,10 @@ const experiences = [
     // description: "Developed and maintained multiple client projects using modern web technologies. Collaborated with design teams to create pixel-perfect user interfaces.",
     technologies: ["Azure AD", "Entra", "Exchange Admin Center", "PowerShell", "Cherwell", "IT Service Management"],
     achievements: [
-      "Managed user accounts and permissions through Azure AD, Entra, and Exchange Admin Center.",
-      "Automated tasks using PowerShell to streamline account creation, management, troubleshooting and issue resolution.",
-      "Resolved 30+ daily tickets using Cherwell and IT service management tools, improving issue resolution time by 20%",
-      "Created detailed documentation and training materials to improve resource utilization and reduce recurring technical issues."
+      "Automated account provisioning and maintenance by developing PowerShell scripts to reduce manual setup time.",
+      "Improved ticket resolution speed by building reusable automation scripts and tools that streamlined common workflows.",
+      "Minimized system downtime and ensured reliability for 10,000+ users by resolving 30+ daily tickets through troubleshooting of authentication, permissions, and system errors",
+      "Reduced repeat tickets by developing clear technical documentation and onboarding guides that prevented recurring issues."
     ]
   },
   {
@@ -165,7 +164,7 @@ export function ExperienceSection() {
                 </Badge>
                 </div>
                 <p className="text-foreground-muted text-sm">
-                Expected graduation with focus on software engineering and system design.
+                Expected graduation in December 2026.
                 </p>
             </CardContent>
             </Card>

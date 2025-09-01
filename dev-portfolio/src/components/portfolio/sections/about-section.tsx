@@ -76,7 +76,7 @@ export function AboutSection() {
           </div>
 
           {/* Skills */}
-          <div className="space-y-6 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+          {/* <div className="space-y-6 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
             <h2 className="text-2xl font-semibold text-foreground">
               Technologies & Skills
             </h2>
@@ -96,22 +96,36 @@ export function AboutSection() {
                 </Badge>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Sidebar */}
         <div className="space-y-6">
-          {/* AWS Badge Card */}
+          {/* AWS Certification Card */}
           <Card className="gradient-card shadow-card animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-            <CardContent className="p-6 text-center">
-              <div className="w-24 h-24 mx-auto mb-4 bg-success/10 rounded-full flex items-center justify-center">
-                <span className="text-2xl font-bold text-success">AWS</span>
+            <CardContent className="p-6">
+              <div className="text-center mb-6">
+                <div className="w-48 h-48 mx-auto mb-4 relative">
+                  <img 
+                    src="/aws-certified-cloud-practitioner-3.png" 
+                    alt="AWS Certified Cloud Practitioner Badge"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <a 
+                  href="https://www.credly.com/badges/4be29c3c-64b0-479a-abce-a14ad64c0320/public_url" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-xl font-bold mb-2 hover:text-primary transition-colors cursor-pointer block"
+                >
+                  AWS Certified Cloud Practitioner
+                </a>
+                {/* <p className="text-sm text-foreground-muted leading-relaxed">
+                  The AWS Certified Cloud Practitioner certification validates foundational, 
+                  high-level understanding of AWS Cloud, services, and terminology.
+                </p> */}
               </div>
-              <h3 className="font-semibold mb-2">AWS Certified</h3>
-              <p className="text-sm text-foreground-muted mb-4">
-                Cloud Practitioner
-              </p>
-              <Badge variant="outline" className="border-success text-success">
+              <Badge variant="outline" className="w-full justify-center border-success text-success py-1">
                 Verified Certification
               </Badge>
             </CardContent>
@@ -120,15 +134,20 @@ export function AboutSection() {
           {/* Contact Info */}
           <Card className="gradient-card shadow-card animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
             <CardContent className="p-6">
-              <h3 className="font-semibold mb-4">Get In Touch</h3>
+              <h3 className="text-lg font-semibold mb-4">Get In Touch</h3>
               <div className="space-y-3">
-                <div className="flex items-center space-x-3 text-sm">
-                  <MapPin className="h-4 w-4 text-primary" />
+                <div className="flex items-center space-x-3 text-m">
+                  <MapPin className="h-6 w-6 text-primary" />
                   <span className="text-foreground-muted">Winnipeg, Canada</span>
                 </div>
-                <div className="flex items-center space-x-3 text-sm">
-                  <Mail className="h-4 w-4 text-primary" />
-                  <span className="text-foreground-muted">andrewiheanacho811@gmail.com</span>
+                <div className="flex items-center space-x-3 text-m">
+                  <Mail className="h-6 w-6 text-primary" />
+                  <a 
+                    href="mailto:andrewiheanacho811@gmail.com" 
+                    className="text-foreground-muted hover:text-primary transition-colors"
+                  >
+                    andrewiheanacho811@gmail.com
+                  </a>
                 </div>
               </div>
 

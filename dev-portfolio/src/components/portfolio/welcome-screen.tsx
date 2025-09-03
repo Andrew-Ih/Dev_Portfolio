@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { AnimatedLines } from "./animated-lines";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, FileText } from "lucide-react";
 
 interface WelcomeScreenProps {
   onEnter: () => void;
@@ -41,15 +41,29 @@ export function WelcomeScreen({ onEnter, isAnimating }: WelcomeScreenProps) {
         </div>
         
         <div className="animate-fade-in-up space-y-6" style={{ animationDelay: '0.3s' }}>
-          <Button 
-            onClick={onEnter}
-            size="lg"
-            variant="outline"
-            className="group border-2 border-white/30 bg-transparent hover:bg-white/10 text-white px-10 py-4 text-lg font-bold transition-all duration-300 transform hover:scale-105 rounded-full backdrop-blur-sm"
-          >
-            View My Work
-            <ArrowDown className="ml-3 h-5 w-5 group-hover:animate-bounce group-hover:translate-y-1 transition-transform duration-300" />
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button 
+              onClick={onEnter}
+              size="lg"
+              variant="outline"
+              className="group border-2 w-[240px] border-white/30 bg-transparent hover:bg-white/10 text-white px-10 py-4 text-lg font-bold transition-all duration-300 transform hover:scale-105 rounded-full backdrop-blur-sm"
+            >
+              View My Work
+              <ArrowDown className="ml-3 h-5 w-5 group-hover:animate-bounce group-hover:translate-y-1 transition-transform duration-300" />
+            </Button>
+
+            <Button 
+              size="lg"
+              variant="outline"
+              className="group border-2 sm:w-[240px] border-white/30 bg-transparent hover:bg-white/10 text-white px-10 py-4 text-lg font-bold transition-all duration-300 transform hover:scale-105 rounded-full backdrop-blur-sm"
+              asChild
+            >
+              <a href="/AndrewIheanacho-Resume.pdf" target="_blank" rel="noopener noreferrer">
+                Resume
+                <FileText className="ml-3 h-5 w-5" />
+              </a>
+            </Button>
+          </div>
         </div>
         
         {/* Social Links */}

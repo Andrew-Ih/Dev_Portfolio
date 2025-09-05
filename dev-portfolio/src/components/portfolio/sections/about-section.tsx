@@ -31,7 +31,7 @@ export function AboutSection() {
                     Frontend Development
                   </h3>
                   <p className="text-foreground-muted">
-                    Creating responsive, interactive user interfaces with React, TypeScript, 
+                    Creating responsive, interactive user interfaces with React, Next.js, TypeScript, 
                     and modern CSS frameworks.
                   </p>
                 </CardContent>
@@ -43,7 +43,7 @@ export function AboutSection() {
                     Backend Development
                   </h3>
                   <p className="text-foreground-muted">
-                    Building scalable APIs and server-side applications using Node.js, 
+                    Building scalable APIs and server-side applications using Node.js, Express.js, C#, JavaScript,
                     Python, and various databases.
                   </p>
                 </CardContent>
